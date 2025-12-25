@@ -1,0 +1,4 @@
+copr.fedorainfracloud.org/atim/lazydocker
+copr.fedorainfracloud.org/atim/starship
+copr.fedorainfracloud.org/phracek/PyCharm
+copr.fedorainfracloud.org/wezfurlong/wezterm-nightly
