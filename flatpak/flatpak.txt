@@ -2,4 +2,4 @@ io.missioncenter.MissionCenter
 md.obsidian.Obsidian
 me.proton.Mail
 me.proton.Pass
-org.flathub.flatpak-external-data-checker
+org.gnome.Extensions
