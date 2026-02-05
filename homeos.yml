@@ -1,0 +1,80 @@
+defaults:
+  actions: { install: install.sh, update: update.sh, remove: remove.sh }
+  platform: fedora
+  profile: home-desktop
+
+platforms:
+  fedora: {}
+  windows:
+    actions_overrides:
+      { install: install.ps1, update: update.ps1, remove: remove.ps1 }
+
+profiles:
+  home-desktop:
+    tags_any: [cli, desktop]
+    tags_all: [home]
+  home-cli:
+    tags_any: [cli]
+    tags_all: [home]
+  work-desktop:
+    tags_any: [cli, desktop]
+    tags_all: [work]
+
+packages:
+  chezmoi:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  docker:
+    tags: [cli, home, work]
+  httpyac:
+    tags: [cli, home, work]
+  lazydocker:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  lazygit:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  neovim:
+    depends_on: [ripgrep, httpyac, node]
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  nvm:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  node:
+    depends_on: [nvm]
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  ripgrep:
+    tags: [cli, home, work]
+  starship:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  vacuum:
+    tags: [cli, home, work]
+    actions_overrides: { update: install }
+  brave:
+    tags: [desktop, home]
+  fcitx5-mozc:
+    tags: [desktop, home]
+  gnome-extensions:
+    tags: [desktop, home]
+  jetbrains-toolbox:
+    tags: [desktop, home, work]
+    actions_overrides: { update: install }
+  missioncenter:
+    tags: [desktop, home]
+  obsidian:
+    tags: [desktop, home]
+    actions_overrides: { update: install }
+  proton-authenticator:
+    tags: [desktop, home]
+    actions_overrides: { update: install }
+  proton-pass:
+    tags: [desktop, home]
+    actions_overrides: { update: install }
+  vscodium:
+    tags: [desktop, home]
+    actions_overrides: { update: install }
+  wezterm:
+    tags: [desktop, home, work]
